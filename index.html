@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html">Home</a>
+        </div>
+    
+        <div id="menu" class="men" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    
+        <div class="nav-right nav-links">
+            <a href="index.html">GPA Calculator</a>
+        </div>
+    </nav>
+
+    <!-- Theme toggle switch -->
+    <label class="theme-switch">
+        <input type="checkbox" id="theme-toggle" onclick="toggleTheme()">
+        <span class="slider"></span>
+    </label>
+
+    <main class="gpa-container">
+        <h1 class="headline">GPA Calculator</h1>
+        <table id="course_table" class="gpa-table">
+            <thead>
+                <tr>
+                    <th>Include</th>
+                    <th>Course (optional)</th>
+                    <th>Letter Grade</th>
+                    <th>Credits</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="gpa-row">
+                    <td><input type="checkbox" class="check-mark" unchecked></td>
+                    <td><input type="text" class="course-input" placeholder="Course #1"></td>
+                    <td>
+                        <select class="grade-input">
+                            <option value="" selected disabled>--</option>
+                            <option value="A+">A+</option>
+                            <option value="A">A</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B">B</option>
+                            <option value="B-">B-</option>
+                            <option value="C+">C+</option>
+                            <option value="C">C</option>
+                            <option value="C-">C-</option>
+                            <option value="D">D</option>
+                            <option value="F">F</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="credit-input" min="0" max="5" step="1"></td>
+                    <td><button class="delete-row">&times;</button></td>
+                </tr>
+                <!-- Additional rows here -->
+            </tbody>
+        </table>
+
+        <div class="button-container">
+            <button id="add_row" class="add-row">+ Add row</button>
+        </div>
+
+        <div class="control-buttons">
+            <button id="calculate" class="calculate-btn">Calculate GPA</button>
+            <button id="reset" class="reset-btn">Reset</button>
+        </div>
+
+        <div class="gpa-output">
+            <h3>GPA:</h3>
+            <span id="gpa_output">* Please click "Calculate" to see result</span>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
